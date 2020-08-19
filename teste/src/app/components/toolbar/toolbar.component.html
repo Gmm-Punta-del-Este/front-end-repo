@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <!-- contenido superior del toolbar -->
+  Programa de los pibes
+</mat-toolbar>
+
+<div class="coso">
+  <mat-sidenav-container>
+  <mat-sidenav mode="side" [(opened)]="opened" >
+    <!-- contenido, opciones, links del menu sidenav -->
+    Opciones coso pum
+  </mat-sidenav>
+
+  <mat-sidenav-content class="coso">
+    <div class="main-content">
+      <!-- Contenido del home -->
+      <router-outlet>
+
+      </router-outlet>
+    </div>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+</div>
+
