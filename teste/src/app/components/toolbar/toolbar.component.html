@@ -1,28 +1,18 @@
-<mat-toolbar color="primary">
-  <button mat-icon-button (click)="sidenav.toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <!-- contenido superior del toolbar -->
-  Programa de los pibes
-</mat-toolbar>
+<div class="example-container">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name">Responsive App</h1>
+  </mat-toolbar>
 
-<div class="coso">
-  <mat-sidenav-container>
-  <mat-sidenav mode="side" [(opened)]="opened" >
-    <!-- contenido, opciones, links del menu sidenav -->
-    Opciones coso pum
-  </mat-sidenav>
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav >
+      <mat-nav-list>
+        <a mat-list-item>Opcion item list 1</a>
+      </mat-nav-list>
+    </mat-sidenav>
 
-  <mat-sidenav-content class="coso">
-    <div class="main-content">
-      <!-- Contenido del home -->
-      <router-outlet>
-
-      </router-outlet>
-    </div>
-    
-  </mat-sidenav-content>
-</mat-sidenav-container>
-
+    <mat-sidenav-content>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam iste sed, excepturi omnis ipsam incidunt neque dolorem doloremque. Doloribus unde officiis deleniti. Aut praesentium voluptatibus aliquam cum accusamus laudantium eaque.</p>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
-
