@@ -5,3 +5,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-typography{
     height: 100%;
 }
+.mat-list-text{
+    padding: 0!important;
+}

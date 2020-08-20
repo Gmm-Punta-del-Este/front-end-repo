@@ -1,30 +1,39 @@
 <div class="container">
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <!-- contenido superior del toolbar -->
+    Programa de los pibes
+  </mat-toolbar>
 
-
-<mat-toolbar color="primary">
-  <button mat-icon-button (click)="sidenav.toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <!-- contenido superior del toolbar -->
-  Programa de los pibes
-</mat-toolbar>
-
-
-  <mat-sidenav-container class="rugby">
-  <mat-sidenav mode="side" [(opened)]="opened" >
+  <mat-sidenav-container class="contenido">
+  <mat-sidenav mode="side" [(opened)]="opened" class="menu-barra">
     <!-- contenido, opciones, links del menu sidenav -->
-    Opciones coso pum
+    <mat-selection-list [multiple]='false' class="centrado">
+      <div>
+        
+      </div>
+      <mat-list-option>
+        <div class="box"><mat-icon mat-list-icon>description</mat-icon><span>Notas</span></div>
+      </mat-list-option>
+      <mat-divider mat-inset-divider></mat-divider>
+      <mat-list-option>
+        <div class="box"><mat-icon mat-list-icon>description</mat-icon><span>Notas</span></div>
+      </mat-list-option>
+      <mat-divider mat-inset-divider></mat-divider>
+      <mat-list-option>
+        <div class="box"><mat-icon mat-list-icon>description</mat-icon><span>Notas</span></div>
+      </mat-list-option>
+      <mat-divider mat-inset-divider></mat-divider>
+    </mat-selection-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
     <div class="main-content">
       <!-- Contenido del home -->
-      <router-outlet>
-
-      </router-outlet>
+      <router-outlet></router-outlet>
     </div>
-    
   </mat-sidenav-content>
 </mat-sidenav-container>
-
 </div>

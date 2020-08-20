@@ -9,10 +9,32 @@
   right: 0;
 }
 
-.mat-sidenav, .mat-sidenav-content {
-  padding: 24px;
+.mat-sidenav-content {
+  padding-top: 24px;
+  padding-bottom: 24px; 
+  padding-left: 20px;
 }
 
-.rugby{
+.contenido{
   flex:1;
 }
+.menu-barra{
+  width: 15%;
+}
+.box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+}
+
+/* .list-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+} */
+
+
+
