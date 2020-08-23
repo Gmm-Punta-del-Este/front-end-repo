@@ -14,20 +14,6 @@
       </div>
       <div fxFlex fxLayoutAlign="flex-end center">
         <button mat-mini-fab [matMenuTriggerFor]="menu" color='primary'><mat-icon>account_circle</mat-icon></button>
-        <mat-menu xPosition="before" #menu="matMenu" class="menu-perfil">
-          <div class="menu-container">
-            <div class="profile-card">
-              <div class="header">
-                  <h2>Soufiane FADIL</h2>
-                  <h4>example@email.com</h4>
-              </div>
-              <img class="imagen-perfil" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Soufiane FADIL">
-            </div>
-      
-           <mat-divider></mat-divider>
-          </div>
-          
-        </mat-menu>
       </div>
     </div>
   </mat-toolbar>
@@ -62,3 +48,13 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 </div>
+
+<mat-menu xPosition="before" #menu="matMenu" class="caja-menu">
+  <div class="menu-container" fxShow fxLayout="column" fxLayoutAlign="center center">
+    <h2 class="mat-title texto-blanco">Facundo Lupachino</h2>
+    <h3 class="mat-h3 texto-blanco mail-perfil">facundolupacchino@gmail.com</h3>
+    <img class="imagen-perfil" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Soufiane FADIL">
+    <mat-divider></mat-divider>
+    <button mat-raised-button color="accent" class="boton-logout">Desconectarse</button>
+  </div>
+</mat-menu>

@@ -27,7 +27,6 @@
   justify-content: center;
   background-position: center;
 }
-
 /* .list-container{
   display: flex;
   flex-direction: column;
@@ -35,19 +34,23 @@
   padding: 0;
   margin: 0;
 } */
-.menu-container{
-  
+.texto-blanco{
+  color: white;
 }
 .imagen-perfil{
-  width: 100px;
-  height: 100px;
+  align-content: center;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
   border-radius: 50%;
 }
-.menu-perfil{
-  width: 2000px;
-  height: 2000px;
-
+.mail-perfil{
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.boton-logout{
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 
