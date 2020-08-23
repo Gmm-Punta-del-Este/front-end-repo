@@ -8,6 +8,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from '@angular/material/list';
 import {MatMenuModule } from '@angular/material/menu';
+import {MatInputModule} from '@angular/material/input';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -16,7 +17,8 @@ const MaterialComponents = [
   MatSidenavModule,
   MatListModule,
   FlexLayoutModule,
-  MatMenuModule
+  MatMenuModule,
+  MatInputModule
 ]
 
 @NgModule({
