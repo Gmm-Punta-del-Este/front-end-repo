@@ -20,21 +20,31 @@
 
   <mat-sidenav-container class="contenido">
   <mat-sidenav mode="side" [(opened)]="opened" class="menu-barra">
-    <!-- contenido, opciones, links del menu sidenav -->
-    <mat-selection-list [multiple]='false' class="centrado">
-      <mat-list-option>
-        <div class="box"><mat-icon mat-list-icon>description</mat-icon><span>Notas</span></div>
-      </mat-list-option>
-      <mat-divider mat-inset-divider></mat-divider>
-      <mat-list-option>
-        <div class="box"><mat-icon mat-list-icon>description</mat-icon><span>Notas</span></div>
-      </mat-list-option>
-      <mat-divider mat-inset-divider></mat-divider>
-      <mat-list-option>
-        <div class="box"><mat-icon mat-list-icon>description</mat-icon><span>Notas</span></div>
-      </mat-list-option>
-      <mat-divider mat-inset-divider></mat-divider>
-    </mat-selection-list>
+    <mat-list>
+      <div mat-subheader class="sidenav-subtitulo">Apartamentos</div>
+      <mat-list-item *ngFor="let opc of Apto">
+        <a mat-flat-button class="sidenav-btn-box">
+          <div fxShow="true" fxFlex fxLayout>
+            <div *ngIf="opc.relleno == true"><mat-icon mat-list-icon>{{opc.icono}}</mat-icon></div>
+            <div *ngIf="opc.relleno == false"><mat-icon mat-list-icon class="material-icons-outlined">{{opc.icono}}</mat-icon></div>
+            <!-- <mat-icon mat-list-icon>{{opc.icono}}</mat-icon> -->
+            <div mat-line> {{opc.tipo}} </div>
+          </div>
+        </a>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <div mat-subheader class="sidenav-subtitulo">Notas</div>
+      <mat-list-item *ngFor="let opc of Notas">
+        <a mat-flat-button class="sidenav-btn-box">
+          <div fxShow="true" fxFlex fxLayout >
+            <mat-icon mat-list-icon>{{opc.icono}}</mat-icon>
+            <div mat-line> {{opc.tipo}} </div>
+          </div>
+        </a>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      
+    </mat-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
