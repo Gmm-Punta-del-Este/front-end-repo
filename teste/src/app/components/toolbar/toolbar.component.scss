@@ -8,18 +8,27 @@
   left: 0;
   right: 0;
 }
+.sidenav-btn-box{
+  width: 100%;
+  padding:5px;
+  margin-left: 10px;
+}
 
 .mat-sidenav-content {
   padding-top: 24px;
   padding-bottom: 24px; 
   padding-left: 20px;
 }
+.sidenav-subtitulo{
+  font-size: 20px;
+  margin-top: 10px!important;
+}
 
 .contenido{
   flex:1;
 }
 .menu-barra{
-  width: 15%;
+  width: 20%;
 }
 .box{
   display: flex;
