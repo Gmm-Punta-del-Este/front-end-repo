@@ -4,12 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 //importar componentes para hacer su ruta
 
-import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
+import { NotasListGeneralComponent } from './components/notas-list-general/notas-list-general.component';
 
 //array de rutas
 const appRoutes: Routes = [
-    {path: '', component: HomeComponent},
+    {path: '', component: NotasListGeneralComponent},
     {path: '**', component: ErrorComponent}
 ];
 

@@ -9,6 +9,7 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from '@angular/material/list';
 import {MatMenuModule } from '@angular/material/menu';
 import {MatInputModule} from '@angular/material/input';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -18,7 +19,8 @@ const MaterialComponents = [
   MatListModule,
   FlexLayoutModule,
   MatMenuModule,
-  MatInputModule
+  MatInputModule,
+  MatGridListModule
 ]
 
 @NgModule({

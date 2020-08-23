@@ -1,9 +1,7 @@
 <div class="container">
   <mat-toolbar color="primary">
-    
     <!-- contenido superior del toolbar -->
-    <div fxShow="true" fxFlex fxLayout>
-      
+    <div fxShow="true" fxFlex fxLayout> 
       <div fxFlex>
         <button mat-icon-button (click)="sidenav.toggle()">
           <mat-icon>menu</mat-icon>
@@ -17,7 +15,7 @@
       </div>
     </div>
   </mat-toolbar>
-
+  <!-- Lista de navegacion que esta en el sidenav -->
   <mat-sidenav-container class="contenido">
   <mat-sidenav mode="side" [(opened)]="opened" class="menu-barra">
     <mat-list>
@@ -27,7 +25,6 @@
           <div fxShow="true" fxFlex fxLayout>
             <div *ngIf="opc.relleno == true"><mat-icon mat-list-icon>{{opc.icono}}</mat-icon></div>
             <div *ngIf="opc.relleno == false"><mat-icon mat-list-icon class="material-icons-outlined">{{opc.icono}}</mat-icon></div>
-            <!-- <mat-icon mat-list-icon>{{opc.icono}}</mat-icon> -->
             <div mat-line> {{opc.tipo}} </div>
           </div>
         </a>
@@ -43,19 +40,17 @@
         </a>
       </mat-list-item>
       <mat-divider></mat-divider>
-      
     </mat-list>
   </mat-sidenav>
-
   <mat-sidenav-content>
+    <!-- Contenido del home en donde el router-outlet navega entre componentes -->
     <div class="main-content">
-      <!-- Contenido del home -->
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
 </div>
-
+<!-- Menu de usuario que despliega el logout de sesion -->
 <mat-menu xPosition="before" #menu="matMenu" class="caja-menu">
   <div class="menu-container" fxShow fxLayout="column" fxLayoutAlign="center center">
     <h2 class="mat-title texto-blanco">Facundo Lupachino</h2>

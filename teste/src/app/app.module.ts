@@ -9,14 +9,15 @@ import { routing, appRoutingProviders } from './app.routing';
 import { MaterialModule } from './material/material/material.module';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { ErrorComponent } from './components/error/error.component';
-import { HomeComponent } from './components/home/home.component';
+import { NotasListGeneralComponent } from './components/notas-list-general/notas-list-general.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     ErrorComponent,
-    HomeComponent
+    NotasListGeneralComponent,
   ],
   imports: [
     BrowserModule,
