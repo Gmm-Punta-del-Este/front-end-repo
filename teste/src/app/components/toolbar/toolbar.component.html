@@ -1,10 +1,35 @@
 <div class="container">
   <mat-toolbar color="primary">
-    <button mat-icon-button (click)="sidenav.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
+    
     <!-- contenido superior del toolbar -->
-    Programa de los pibes
+    <div fxShow="true" fxHide.lt-md fxFlex fxLayout>
+      <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+      <div fxFlex>
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div fxFlex fxLayoutAlign="center center">
+         Search bar
+      </div>
+      <div fxFlex fxLayoutAlign="flex-end center">
+        <button mat-mini-fab [matMenuTriggerFor]="menu" color='primary'><mat-icon>account_circle</mat-icon></button>
+        <mat-menu xPosition="before" #menu="matMenu" class="menu-perfil">
+          <div class="menu-container">
+            <div class="profile-card">
+              <div class="header">
+                  <h2>Soufiane FADIL</h2>
+                  <h4>example@email.com</h4>
+              </div>
+              <img class="imagen-perfil" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Soufiane FADIL">
+            </div>
+      
+           <mat-divider></mat-divider>
+          </div>
+          
+        </mat-menu>
+      </div>
+    </div>
   </mat-toolbar>
 
   <mat-sidenav-container class="contenido">
