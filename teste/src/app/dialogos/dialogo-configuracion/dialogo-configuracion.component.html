@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>{{titulo}}</h1>
+<div mat-dialog-content>
+    <p>
+        Modo Daltonismo 
+        <mat-slide-toggle [(ngModel)]='daltonismo'>
+            <div *ngIf="daltonismo"><mat-icon>visibility</mat-icon></div><div *ngIf="!daltonismo"><mat-icon class="material-icons-outlined">visibility_outline</mat-icon></div>
+        </mat-slide-toggle> 
+    </p>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

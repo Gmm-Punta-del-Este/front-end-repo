@@ -1,5 +1,7 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import {DialogoConfiguracionComponent} from '../../dialogos/dialogo-configuracion/dialogo-configuracion.component';
+import {MatDialog,MatDialogConfig} from '@angular/material/dialog';
 
 export interface SeccionApto {
   relleno: boolean;
@@ -52,8 +54,21 @@ export class ToolbarComponent implements OnInit {
     },
 
   ];
+
+  constructor(private dialogoConfiguracion: MatDialog){}
   ngOnInit(){
 
   }
+  abrirDialogoConfiguracion(){
+    const dialogConfig = new MatDialogConfig();
 
+    dialogConfig.data = {
+      titulo: 'Configuraciones Principales'
+    };
+
+    const dialogRef = this.dialogoConfiguracion.open(DialogoConfiguracionComponent,dialogConfig);
+
+    // dialogRef guarda la referencia, cosa que si necesito hacer algo despues del dialogo lo haga. Por ahora no hago nada 26/08/2020
+
+  }
 }
