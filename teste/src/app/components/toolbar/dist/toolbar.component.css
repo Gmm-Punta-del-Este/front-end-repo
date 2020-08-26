@@ -1,5 +1,4 @@
-
-.container{
+.container {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -8,53 +7,61 @@
   left: 0;
   right: 0;
 }
-.sidenav-btn-box{
+
+.sidenav-btn-box {
   width: 100%;
-  padding:5px;
+  padding: 5px;
   margin-left: 10px;
 }
 
 .mat-sidenav-content {
   padding-top: 24px;
-  padding-bottom: 24px; 
+  padding-bottom: 24px;
   padding-left: 20px;
 }
-.sidenav-subtitulo{
+
+.sidenav-subtitulo {
   font-size: 20px;
-  margin-top: 10px!important;
+  margin-top: 10px !important;
 }
 
-.contenido{
-  flex:1;
+.contenido {
+  flex: 1;
 }
-.menu-barra{
+
+.menu-barra {
   width: 20%;
 }
-.box{
+
+.box {
   display: flex;
   align-items: center;
   justify-content: center;
   background-position: center;
 }
-.texto-blanco{
+
+.texto-blanco {
   color: white;
 }
-.imagen-perfil{
+
+.imagen-perfil {
   align-content: center;
   width: 80px;
   height: 80px;
   object-fit: cover;
   border-radius: 50%;
 }
-.mail-perfil{
+
+.mail-perfil {
   padding-right: 20px;
   padding-left: 20px;
 }
-.boton-menu{
+
+.boton-menu {
   width: 90%;
   margin-top: 20px;
 }
-.boton-logout{
+
+.boton-logout {
   margin-bottom: 5px;
 }
-
