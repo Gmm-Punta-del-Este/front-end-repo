@@ -1,11 +1,24 @@
 <div class="contenedor">
-    <mat-grid-list cols="4" rowHeight="100px">
-        <mat-grid-tile
-            *ngFor="let tile of tiles"
-            [colspan]="tile.cols"
-            [rowspan]="tile.rows"
-            [style.background]="tile.color">
-          {{tile.text}}
+    <mat-grid-list cols="4" rowHeight="1:1">
+        <mat-grid-tile *ngFor="let nota of colNotas"
+            [colspan]="1"
+            [rowspan]="1">
+            <mat-card class="example-card" >
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>{{nota.titulo}}</mat-card-title>
+                  <mat-card-subtitle>{{nota.documento}} Nombre de persona</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>
+                    {{nota.texto}}
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                  <button mat-button>SHARE</button>
+                </mat-card-actions>
+              </mat-card>
         </mat-grid-tile>
     </mat-grid-list>
 </div>
