@@ -12,6 +12,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { ErrorComponent } from './components/error/error.component';
 import { NotasListGeneralComponent } from './components/notas-list-general/notas-list-general.component';
 import { DialogoConfiguracionComponent } from './dialogos/dialogo-configuracion/dialogo-configuracion.component';
+import { ApartamentoTodosComponent } from './components/apartamentos/apartamento-todos/apartamento-todos.component';
+import { ApartamentoInhouseComponent } from './components/apartamentos/apartamento-inhouse/apartamento-inhouse.component';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { DialogoConfiguracionComponent } from './dialogos/dialogo-configuracion/
     ErrorComponent,
     NotasListGeneralComponent,
     DialogoConfiguracionComponent,
+    ApartamentoTodosComponent,
+    ApartamentoInhouseComponent,
   ],
   imports: [
     BrowserModule,

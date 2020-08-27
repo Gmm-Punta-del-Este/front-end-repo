@@ -21,7 +21,7 @@
     <mat-list>
       <div mat-subheader class="sidenav-subtitulo">Apartamentos</div>
       <mat-list-item *ngFor="let opc of Apto">
-        <a mat-flat-button class="sidenav-btn-box">
+        <a mat-flat-button class="sidenav-btn-box" [routerLink]="opc.direccion" [routerLinkActive]='["active"]'>
           <div fxShow="true" fxFlex fxLayout>
             <div *ngIf="opc.relleno == true"><mat-icon mat-list-icon>{{opc.icono}}</mat-icon></div>
             <div *ngIf="opc.relleno == false"><mat-icon mat-list-icon class="material-icons-outlined">{{opc.icono}}</mat-icon></div>

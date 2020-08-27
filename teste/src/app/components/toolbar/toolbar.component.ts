@@ -7,6 +7,7 @@ export interface SeccionApto {
   relleno: boolean;
   icono: string;
   tipo: string;
+  direccion: string;
 }
 export interface SeccionNotas {
   icono: string;
@@ -26,17 +27,26 @@ export class ToolbarComponent implements OnInit {
     {
       relleno: true,
       icono: 'apartment',
+      tipo: 'Todos',
+      direccion: 'apartamentos/todos'
+    },
+    {
+      relleno: true,
+      icono: 'apartment',
       tipo: 'InHouse',
+      direccion: '/'
     },
     {
       relleno: true,
       icono: 'house',
       tipo: 'Ingresos',
+      direccion: '/'
     },
     {
       relleno: false,
       icono: 'house',
       tipo: 'Egresos',
+      direccion: '/'
     }
   ];
   Notas: SeccionNotas[] = [

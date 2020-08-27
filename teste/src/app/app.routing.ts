@@ -6,10 +6,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ErrorComponent } from './components/error/error.component';
 import { NotasListGeneralComponent } from './components/notas-list-general/notas-list-general.component';
+import { ApartamentoTodosComponent } from './components/apartamentos/apartamento-todos/apartamento-todos.component';
 
 //array de rutas
 const appRoutes: Routes = [
     {path: '', component: NotasListGeneralComponent},
+    {path: 'home', component: NotasListGeneralComponent},
+    {path: 'apartamentos/todos', component: ApartamentoTodosComponent},
     {path: '**', component: ErrorComponent}
 ];
 
