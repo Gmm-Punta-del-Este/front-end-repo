@@ -11,8 +11,8 @@ export class DialogoConfiguracionComponent implements OnInit {
 
   daltonismo=true;
   titulo:string;
-  constructor(private dialogRef: MatDialogRef<DialogoConfiguracionComponent>) { 
-    
+  constructor(private dialogRef: MatDialogRef<DialogoConfiguracionComponent>,@Inject(MAT_DIALOG_DATA) data) { 
+    this.titulo = data.titulo;
   }
 
   ngOnInit(): void {
