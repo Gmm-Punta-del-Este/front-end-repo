@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { routing, appRoutingProviders } from './app.routing';
+import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 
 import { MaterialModule } from './material/material/material.module';
@@ -31,7 +32,8 @@ import { ApartamentoInhouseComponent } from './components/apartamentos/apartamen
     BrowserAnimationsModule,
     MaterialModule,
     routing,
-    FormsModule
+    FormsModule,
+    HttpClientModule
     
   ],
   providers: [

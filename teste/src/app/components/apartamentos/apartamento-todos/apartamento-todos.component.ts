@@ -1,85 +1,30 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {merge, Observable, of as observableOf} from 'rxjs';
-import {catchError, map, startWith, switchMap} from 'rxjs/operators';
+import { Component, OnInit} from '@angular/core';
+import { FakeApiGeneralService } from '../../../service/fakeapi/fake-api-general.service';
 
 @Component({
   selector: 'app-apartamento-todos',
   templateUrl: './apartamento-todos.component.html',
-  styleUrls: ['./apartamento-todos.component.css']
+  styleUrls: ['./apartamento-todos.component.css'],
+  providers: [FakeApiGeneralService]
 })
-export class ApartamentoTodosComponent implements OnInit,AfterViewInit {
+export class ApartamentoTodosComponent implements OnInit {
 
-  displayedColumns: string[] = ['created', 'state', 'number', 'title'];
-  exampleDatabase: ExampleHttpDatabase | null;
-  data: GithubIssue[] = [];
+  aux:any;
+  constructor(private _FakeApiGeneralService: FakeApiGeneralService) {}
 
-  resultsLength = 0;
-  isLoadingResults = true;
-  isRateLimitReached = false;
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-
-  constructor(private _httpClient: HttpClient) {}
-
-  ngOnInit(){}
-
-  ngAfterViewInit() {
-    this.exampleDatabase = new ExampleHttpDatabase(this._httpClient);
-
-    // If the user changes the sort order, reset back to the first page.
-    this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
-
-    merge(this.sort.sortChange, this.paginator.page)
-      .pipe(
-        startWith({}),
-        switchMap(() => {
-          this.isLoadingResults = true;
-          return this.exampleDatabase!.getRepoIssues(
-            this.sort.active, this.sort.direction, this.paginator.pageIndex);
-        }),
-        map(data => {
-          // Flip flag to show that loading has finished.
-          this.isLoadingResults = false;
-          this.isRateLimitReached = false;
-          this.resultsLength = data.total_count;
-
-          return data.items;
-        }),
-        catchError(() => {
-          this.isLoadingResults = false;
-          // Catch if the GitHub API has reached its rate limit. Return empty data.
-          this.isRateLimitReached = true;
-          return observableOf([]);
-        })
-      ).subscribe(data => this.data = data);
+  ngOnInit(){
+    this.getUsuarios();
+    console.log(this.aux);
   }
 
-}
-export interface GithubApi {
-  items: GithubIssue[];
-  total_count: number;
-}
-
-export interface GithubIssue {
-  created_at: string;
-  number: string;
-  state: string;
-  title: string;
-}
-
-/** An example database that the data source uses to retrieve data for the table. */
-export class ExampleHttpDatabase {
-  constructor(private _httpClient: HttpClient) {}
-
-  getRepoIssues(sort: string, order: string, page: number): Observable<GithubApi> {
-    const href = 'https://api.github.com/search/issues';
-    const requestUrl =
-        `${href}?q=repo:angular/components&sort=${sort}&order=${order}&page=${page + 1}`;
-
-    return this._httpClient.get<GithubApi>(requestUrl);
+  getUsuarios(){
+    this._FakeApiGeneralService.getUser().subscribe(
+  		result => {
+        this.aux = result;
+        console.log(result);
+  		},error => {
+  			console.log(<any>error);
+  		});
   }
+
 }
