@@ -13,7 +13,10 @@
         <mat-icon class="icono-tab">apartment</mat-icon>
         Todos
       </ng-template>
-      Content 2
+      <div class="contenedorTabla">
+        <ng-container *ngTemplateOutlet='tabla'> </ng-container>
+      </div>
+      
     </mat-tab>
   
     <mat-tab>
@@ -26,3 +29,40 @@
     </mat-tab>
   </mat-tab-group>
 </div>
+
+<ng-template #tabla>
+  <mat-table [dataSource]="listaUsuarios" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="nombre">
+      <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="usuario">
+      <mat-header-cell *matHeaderCellDef> username </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> email </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="telefono">
+      <mat-header-cell *matHeaderCellDef> phone </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.phone}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="website">
+      <mat-header-cell *matHeaderCellDef> website </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.website}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnas;"></mat-row>
+  </mat-table>
+</ng-template>

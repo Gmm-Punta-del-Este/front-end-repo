@@ -23,4 +23,7 @@ export class FakeApiGeneralService{
 
         return this._http.get(this.url+'posts/1');
     }
+    getUsers(): Observable<any>{
+        return this._http.get(this.url+'users');
+    }
 }
