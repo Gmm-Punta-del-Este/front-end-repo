@@ -1,3 +1,3 @@
 export var Global = {
-    url: 'https://reqres.in/'
+    url: 'https://jsonplaceholder.typicode.com/'
 };

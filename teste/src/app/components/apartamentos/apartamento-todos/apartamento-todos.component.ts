@@ -1,6 +1,13 @@
 import { Component, OnInit} from '@angular/core';
 import { FakeApiGeneralService } from '../../../service/fakeapi/fake-api-general.service';
 
+export interface post{
+  userId:any,
+  id:any,
+  title:any,
+  body:any
+}
+
 @Component({
   selector: 'app-apartamento-todos',
   templateUrl: './apartamento-todos.component.html',
@@ -9,19 +16,18 @@ import { FakeApiGeneralService } from '../../../service/fakeapi/fake-api-general
 })
 export class ApartamentoTodosComponent implements OnInit {
 
-  aux:any;
+  aux:post;
   constructor(private _FakeApiGeneralService: FakeApiGeneralService) {}
 
   ngOnInit(){
     this.getUsuarios();
-    console.log(this.aux);
   }
 
   getUsuarios(){
-    this._FakeApiGeneralService.getUser().subscribe(
+    this._FakeApiGeneralService.getPost().subscribe(
   		result => {
         this.aux = result;
-        console.log(result);
+        console.log('var result: ' + result.id);
   		},error => {
   			console.log(<any>error);
   		});

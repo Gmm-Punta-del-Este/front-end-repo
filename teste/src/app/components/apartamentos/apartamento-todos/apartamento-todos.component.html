@@ -1,5 +1,28 @@
-<div fxFlex fxLayout fxLayoutAlign="center center" class="contenedor">
-  <p>apartamentos todos component</p>
-  <p>{{aux.userId}}</p>
+<div class="contenedor">
+  <mat-tab-group mat-align-tabs="center" animationDuration="0ms">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="icono-tab">house</mat-icon>
+        Ingresos
+      </ng-template>
+      Content 1
+    </mat-tab>
+  
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="icono-tab">apartment</mat-icon>
+        Todos
+      </ng-template>
+      Content 2
+    </mat-tab>
+  
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon mat-list-icon class="material-icons-outlined icono-tab">house</mat-icon>
+        Egresos
+      </ng-template>
+  
+      Content 3
+    </mat-tab>
+  </mat-tab-group>
 </div>
-

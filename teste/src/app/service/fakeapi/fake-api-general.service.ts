@@ -18,9 +18,9 @@ export class FakeApiGeneralService{
         return 'Probando servicio de angular';
     }
 
-    getUser(): Observable<any>{
+    getPost(): Observable<any>{
         //let headers = new HttpHeaders().set('Content-Type','application/json');
 
-        return this._http.get('https://jsonplaceholder.typicode.com/posts/1');
+        return this._http.get(this.url+'posts/1');
     }
 }
