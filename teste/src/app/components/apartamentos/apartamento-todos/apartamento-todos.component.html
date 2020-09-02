@@ -5,13 +5,13 @@
         <mat-icon class="icono-tab">house</mat-icon>
         Ingresos
       </ng-template>
-      Content 1
+      Tabla con Fab para agregar un ingreso
     </mat-tab>
   
     <mat-tab>
       <ng-template mat-tab-label>
         <mat-icon class="icono-tab">apartment</mat-icon>
-        Todos
+        Ocupados
       </ng-template>
       <div class="contenedorTabla">
         <ng-container *ngTemplateOutlet='tabla'> </ng-container>
@@ -25,12 +25,17 @@
         Egresos
       </ng-template>
   
-      Content 3
+      Listado con los egresos del ultimo dia, configurable a 3 dias o una semana 
     </mat-tab>
   </mat-tab-group>
 </div>
 
 <ng-template #tabla>
+  <!-- <mat-form-field>
+    <mat-label>Buscar</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ej: 1" #input>
+  </mat-form-field> -->
+
   <mat-table [dataSource]="listaUsuarios" class="mat-elevation-z8">
     <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
@@ -64,5 +69,9 @@
 
     <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnas;"></mat-row>
+
+    <!-- <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="5">No data matching the filter "{{input.value}}"</td>
+    </tr> -->
   </mat-table>
 </ng-template>

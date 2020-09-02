@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { FakeApiGeneralService } from '../../../service/fakeapi/fake-api-general.service';
+import {MatTableDataSource} from '@angular/material/table';
 
 export interface users{
   id: number,
@@ -20,7 +21,7 @@ export class ApartamentoTodosComponent implements OnInit {
 
   listaUsuarios: users[];
   columnas: string[] = ['id','nombre','usuario','email','telefono','website'];
-
+  // dataSource = new MatTableDataSource(this.listaUsuarios);
   constructor(private _FakeApiGeneralService: FakeApiGeneralService) {}
 
   ngOnInit(){
@@ -35,5 +36,10 @@ export class ApartamentoTodosComponent implements OnInit {
   			console.log(<any>error);
   		});
   }
+
+  // applyFilter(event: Event) {
+  //   const filterValue = (event.target as HTMLInputElement).value;
+  //   this.dataSource.filter = filterValue.trim().toLowerCase();
+  // }
 
 }
